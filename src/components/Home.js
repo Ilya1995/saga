@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getUsers } from "../actions";
+import { selectLengthWebsiteUser } from "../selectors";
 import Box from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -17,7 +18,7 @@ import Typography from "@material-ui/core/Typography";
 
 export default function Home() {
   const history = useHistory();
-  const users = useSelector(state => state.users);
+  const users = useSelector(selectLengthWebsiteUser);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUsers());

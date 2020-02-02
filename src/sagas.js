@@ -3,7 +3,7 @@ import { GET_USERS, PUT_USERS, GET_ALBUMS, PUT_ALBUMS } from "./actions";
 
 function fetchDataUsers() {
   return fetch(
-    "https://jsonplaceholder.typicode.com/users?_limit=5"
+    "https://jsonplaceholder.typicode.com/users?_limit=10"
   ).then(response => response.json());
 }
 

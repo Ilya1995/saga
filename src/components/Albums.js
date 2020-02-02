@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAlbums } from "../actions";
+import { selectIncludesStringOfTitle } from "../selectors";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -13,7 +14,7 @@ import Typography from "@material-ui/core/Typography";
 export default function LoginPage() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const albums = useSelector(state => state.albums);
+  const albums = useSelector(selectIncludesStringOfTitle);
   const { id } = useParams();
 
   useEffect(() => {
